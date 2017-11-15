@@ -22,6 +22,6 @@ container.appendChild(containerText);
 //No ingresar texto vacío (deshabilitar el botón de "twittear").
 if (document.getElementById("tweet-box").value == ''){
     // alert("debug");
-    document.getElementById("btn").style.display ="none";
+    document.getElementById("btn").style.disable ="false";
 }
 //Contar la cantidad de caracteres de forma regresiva.

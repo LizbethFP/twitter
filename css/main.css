@@ -4,6 +4,12 @@
   margin: 0;
 }
 
+body {
+  /*background-image: url(https://www.paxinasgalegas.es/imagenes/mail-boxes-etc_img30214n3t2.jpg);
+  background-repeat: no-repeat;*/
+  background-color: purple;
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -22,11 +28,16 @@ h1 {
   width: 20%;
   margin: 1% 3% 3% 8%;
   background-color: #fff;
+  padding: 1%;
 }
 
 h2 {
   font-weight: bold;
   margin-bottom: 3%;
+}
+
+p {
+  line-height: 20px;
 }
 
 hr:first-of-type {
@@ -42,8 +53,9 @@ p:last-child {
 .form-right {
   display: inline-block;
   width: 30%;
-  margin: 5% 15% 10% 5%;
+  margin: 2% 15% 10% 5%;
   background-color: #fff;
+  padding: 1%;
 }
 
 textarea {
