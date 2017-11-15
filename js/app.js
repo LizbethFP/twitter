@@ -25,3 +25,15 @@ if (document.getElementById("tweet-box").value == ''){
     document.getElementById("btn").style.disable ="false";
 }
 //Contar la cantidad de caracteres de forma regresiva.
+var textarea = document.querySelector("textarea");
+
+textarea.addEventListener("input", function(){
+    var maxlength = this.getAttribute("maxlength");
+    var currentLength = this.value.length;
+
+    if( currentLength >= maxlength ){
+        console.log("You have reached the maximum number of characters.");
+    }else{
+        console.log(maxlength - currentLength + " chars left");
+    }
+});
