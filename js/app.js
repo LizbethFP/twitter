@@ -14,6 +14,20 @@ function tweet(event) {
   containerTweets.appendChild(paragraphForCapturedText);
   // prevenir algunas acciones por defecto
   event.preventDefault();
+  // Agregar hora
+  function showTime() {
+    var actualMoment = new Date();
+    var hour = actualMoment.getHours();
+    var minute = actualMoment.getMinutes();
+    var printTime = hour + ' : ' + minute;
+    var smallFather = document.querySelector('.container-tweets p');
+    // crear elemento contenedor de hora
+    var timeContainer = document.createElement('p');
+    // crear contenido del contenedor de hora
+    timeContainer.textContent = printTime;
+    // agregarlo al html
+    smallFather.appendChild(timeContainer);
+  };
 }
 
 /* ************VERSION 0.0.2*************** */
@@ -58,13 +72,13 @@ function colorsOfCharacters() {
 
 /* ***************VERSION 0.0.4********************** */
 // Al presionar enter(/n) que crezca el textarea de acuerdo al tamaño del texto.
-function resizeTextAreaPress() {
-  var lengthOfTweet = (textAreaPress.value).length;
-  if (window.event.keyCode === '13') {
-    textAreaPress.style.height = 'lengthOfTweet';
-    textAreaPress.style.overflow = 'none';
-  }
-}
+// function resizeTextAreaPress() {
+//   var lengthOfTweet = (textAreaPress.value).length;
+//   if (window.event.keyCode === '13') {
+//     textAreaPress.style.height = 'lengthOfTweet';
+//     textAreaPress.style.overflow = 'none';
+//   }
+// }
 // otro intento
 // function textAreaAdjust(o) {
 //   o.style.height = '1px';
@@ -74,23 +88,19 @@ function resizeTextAreaPress() {
 
 /* ***************VERSION 0.0.6 (Extra)********************** */
 // Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
-function showTime() {
-  var actualMoment = new Date();
-  var hour = actualMoment.getHours();
-  var minute = actualMoment.getMinutes();
-  var printTime = hour + ' : ' + minute;
-  var smallFather = document.querySelector('.p');
-  // crear elemento contenedor de hora
-  var timeContainer = document.createElement('div');
-  // crear contenido del contenedor de hora
-  timeContainer.textContent = printTime;
-  // agregarlo al html
-  document.querySelector('.container.tweets').smallFather.appendChild(timeContainer);
-}
-
-function showTimeLibrary() {
-  moment().format('LT');
-}
+// function showTime() {
+//   var actualMoment = new Date();
+//   var hour = actualMoment.getHours();
+//   var minute = actualMoment.getMinutes();
+//   var printTime = hour + ' : ' + minute;
+//   var smallFather = document.querySelector('.p');
+//   // crear elemento contenedor de hora
+//   var timeContainer = document.createElement('div');
+//   // crear contenido del contenedor de hora
+//   timeContainer.textContent = printTime;
+//   // agregarlo al html
+//   document.querySelector('.container.tweets').smallFather.appendChild(timeContainer);
+// }
 
 
 // Evento de click al boton en versión 1
@@ -101,5 +111,5 @@ validate();
 textAreaPress.addEventListener('keyup', countCharactersDown);
 textAreaPress.addEventListener('keyup', colorsOfCharacters);
 // Evento de keyup de enter al textarea en versión 4
-textAreaPress.addEventListener('keyup', resizeTextAreaPress);
-button.addEventListener('click', showTime);
+// textAreaPress.addEventListener('keyup', resizeTextAreaPress);
+// button.addEventListener('click', showTime);
