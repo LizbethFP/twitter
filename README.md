@@ -52,7 +52,7 @@ Este proyecto contiene:
 1. Un archivo `index.html` que contiene la estructura inicial de la página web. Este debe contener las siguientes secciones:
 
   * El cuerpo de la página web estará cubierto por una imagen de fondo.
-  * Un encabezado de fondo celeste con "Twitter" como título en el medio.
+  * Un encabezado de fondo celeste con "Twitter" como título en el centro.
   * Dos cajas al mismo nivel. A la izquierda, se ubica la información del reto de código que simula el área donde se suele ubicar los datos del usuario de Twitter. A la derecha, se ubica el área donde se ingresará los tweets a hacer por medio de un formulario con un área para ingresar texto y un botón para hacer los tweets.
   * Un contenedor donde irán apareciendo los tweets.
 
