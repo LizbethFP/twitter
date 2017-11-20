@@ -1,3 +1,4 @@
+/*Clases reutilizables*/
 * {
   padding: 0;
   font-family: 'helvetica', 'sans-serif';
@@ -5,15 +6,17 @@
 }
 
 body {
-  /*background-image: url(https://www.paxinasgalegas.es/imagenes/mail-boxes-etc_img30214n3t2.jpg);
-  background-repeat: no-repeat;*/
-  background-color: purple;
+  background-image: url(../assets/images/picturebackground.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-color: purple;*/
 }
 
 .text-uppercase {
   text-transform: uppercase;
 }
 
+/*Clases específicas*/
 h1 {
   background-color: #6ad2f3;
   color: #fff;
@@ -76,7 +79,10 @@ textarea {
   padding: 0;
 }
 
-.container-tweets  p {
+.container-tweets p {
   background-color: #fff;
-  margin: 0 0 2% 0;
+  margin: 0 0 1.5% 0;
+  padding: 0.8%;
+  border-radius: 10px;
+  border: 2px solid #fd76c7;
 }
