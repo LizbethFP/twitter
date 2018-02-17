@@ -6,7 +6,8 @@
 }
 
 body {
-  background-image: url(../assets/images/backgroundpicture.JPG);
+  /* background-image: url(../assets/images/backgroundpicture.jpg); */
+  background-image: url(https://source.unsplash.com/random);
   background-repeat: no-repeat;
   background-size: cover;
   /*background-color: purple;*/
@@ -63,6 +64,7 @@ hr:first-of-type {
 
 textarea {
   width: 90%;
+  resize: none;
 }
 
 .hr-form {
