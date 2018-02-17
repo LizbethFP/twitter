@@ -26,19 +26,20 @@ window.addEventListener('load', function() {
     // Retornar a cantidad máxima en el span
     characters.textContent = MAXCHARACTERS;
     // Agregar hora
-    function showTime() {
-      var actualMoment = new Date();
-      var hour = actualMoment.getHours();
-      var minute = actualMoment.getMinutes();
-      var printTime = hour + ' : ' + minute;
-      var smallFather = document.querySelector('.container-tweets p');
-      // crear elemento contenedor de hora
-      var timeContainer = document.createElement('p');
-      // crear contenido del contenedor de hora
-      timeContainer.textContent = printTime;
-      // agregarlo al html
-      smallFather.appendChild(timeContainer);
-    };
+    // function showTime() {
+    //   var actualMoment = new Date();
+    //   var hour = actualMoment.getHours();
+    //   var minute = actualMoment.getMinutes();
+    //   var printTime = hour + ' : ' + minute;
+    //   var smallFather = document.querySelector('.container-tweets p');
+    //   // crear elemento contenedor de hora
+    //   var timeContainer = document.createElement('p');
+    //   // crear contenido del contenedor de hora
+    //   timeContainer.textContent = printTime;
+    //   // agregarlo al html
+    //   smallFather.appendChild(timeContainer);
+    // };
+    // showTime;
   };
 
   /* ************VERSION 0.0.2*************** */
@@ -84,10 +85,10 @@ window.addEventListener('load', function() {
   /* ***************VERSION 0.0.4********************** */
   // Al presionar enter(/n) que crezca el textarea de acuerdo al tamaño del texto.
   var resizeTextAreaPress = function(event) {
-    var writeBox = this;
+    var textBox = this;
     setTimeout(function() {
-      writeBox.style.cssText = 'height: auto; padding: 0';
-      writeBox.style.cssText = 'height:' + writeBox.scrollHeight + 'px';
+      textBox.style.cssText = 'height: auto; padding: 0';
+      textBox.style.cssText = 'height:' + textBox.scrollHeight + 'px';
     }, 0);
     // event.preventDefault();
   };
@@ -103,19 +104,20 @@ window.addEventListener('load', function() {
 
   /* ***************VERSION 0.0.6 (Extra)********************** */
   // Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
-  // function showTime() {
-  //   var actualMoment = new Date();
-  //   var hour = actualMoment.getHours();
-  //   var minute = actualMoment.getMinutes();
-  //   var printTime = hour + ' : ' + minute;
-  //   var smallFather = document.querySelector('.p');
-  //   // crear elemento contenedor de hora
-  //   var timeContainer = document.createElement('div');
-  //   // crear contenido del contenedor de hora
-  //   timeContainer.textContent = printTime;
-  //   // agregarlo al html
-  //   document.querySelector('.container.tweets').smallFather.appendChild(timeContainer);
-  // }
+  var showTime = function() {
+    // Llamada
+    var time = moment().format('HH:mm');
+    console.log(time);
+    
+    var smallFather = document.querySelector('.p');
+    // crear elemento contenedor de hora
+    var timeElementContainer = document.createElement('span');
+    // crear contenido del contenedor de hora
+    timeElementContainer.textContent = time;
+    // agregarlo al html
+    smallFather.nextSibling(timeElementContainer);
+    // smallFather.innerHTML = '<span>' + time + '</span>';
+  };
 
 
   // Evento de click al boton en versión 1
@@ -127,6 +129,6 @@ window.addEventListener('load', function() {
   textAreaPress.addEventListener('keydown', colorsOfCharacters);
   textAreaPress.addEventListener('keydown', resizeTextAreaPress);
   textAreaPress.addEventListener('keydown', noStrings);
-// Evento de keyup de enter al textarea en versión 4
-// button.addEventListener('click', showTime);
+  // Evento de keyup de enter al textarea en versión 4
+  button.addEventListener('click', showTime);
 });
